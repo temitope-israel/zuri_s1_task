@@ -1,6 +1,7 @@
 import datetime
 from fastapi import FastAPI
 import requests
+from typing import Optional
 
 app = FastAPI()
 
@@ -27,11 +28,13 @@ personal_info = {
     "current_day": weekday_name,
     "utc_time": final_utc_time,
     "track": "backend",
+    "github_file_url": "https://github.com/temitope-israel/zuri_s1_task/blob/main/main.py",
+    "github_repo_url": "https://github.com/temitope-israel/zuri_s1_task",
     "status_code" : status_code
 
 }
 
 
-@app.get("/")
-def home():
+@app.get("/api")
+def home(slack_name, track):
     return personal_info
