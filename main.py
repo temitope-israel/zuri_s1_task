@@ -36,5 +36,5 @@ personal_info = {
 
 
 @app.get("/api")
-def home(slack_name, track):
+def api(slack_name, track):
     return personal_info
