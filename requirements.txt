@@ -23,7 +23,7 @@ Django==3.2.21
 executing==1.2.0
 fastapi==0.103.1
 fastjsonschema==2.16.3
-Flask==2.3.3
+Flask==2.2.5
 fqdn==1.5.1
 gunicorn==21.2.0
 h11==0.14.0
