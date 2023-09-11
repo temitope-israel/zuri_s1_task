@@ -7,18 +7,14 @@ app = FastAPI()
 
 
 # Get Weekday
-today = datetime.date.today()
+today = datetime.datetime.today()
 weekday_name = today.strftime('%A')
 
 
 # Get UTC Time
-utc_time = datetime.datetime.today()
-utc_time = utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+# u_time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+# #fu_time = u_time.strftime('%Y-%m-%dT%H:%M:%SZ')
 
-
-# utc_time = datetime.datetime.today().replace(microsecond=0).isoformat()
-# final_utc_time = str(utc_time) + "Z"
-# utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
 # Get Status Response code
@@ -31,7 +27,7 @@ status_code = r.status_code
 personal_info = {
     "slack_name": "omoniyi_temitope",
     "current_day": weekday_name,
-    "utc_time": utc_time,
+    "utc_time": datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ'),
     "track": "backend",
     "github_file_url": "https://github.com/temitope-israel/zuri_s1_task/blob/main/main.py",
 
